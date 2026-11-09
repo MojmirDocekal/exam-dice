@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exam Dice — random question picker</title>
+<meta name="description" content="Roll a dice to pick random exam questions. Every number in a series is drawn at most once. Works on PC, Android and iOS.">
+<meta name="theme-color" content="#2e8b57">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="icons/dice-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Exam Dice">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎲 Exam Dice</h1>
+  <button id="sound-btn" aria-label="Toggle sound" aria-pressed="true">🔊</button>
+</header>
+
+<main>
+  <div class="controls">
+    <div class="sides" role="group" aria-label="Number of sides (number of questions)">
+      <span class="sides-label">Sides</span>
+      <button id="minus" class="step-btn" aria-label="Fewer sides">−</button>
+      <span id="sides-value">d6</span>
+      <button id="plus" class="step-btn" aria-label="More sides">+</button>
+    </div>
+    <button id="new-btn" class="secondary">New series</button>
+  </div>
+
+  <div class="die-wrap">
+    <svg id="die-svg" viewBox="-160 -160 320 320" role="img" aria-label="Dice">
+      <g id="die-g"></g>
+    </svg>
+  </div>
+
+  <p id="status" role="status" aria-live="polite">press ROLL to draw a question</p>
+
+  <div id="chips" class="chips" aria-label="Numbers already drawn in this series"></div>
+
+  <div class="actions">
+    <button id="roll-btn">ROLL<span class="kbd-hint">· space</span></button>
+  </div>
+</main>
+
+<dialog id="complete">
+  <p id="complete-text">All numbers have been drawn.</p>
+  <div class="dialog-actions">
+    <button id="dialog-new" class="primary">New series</button>
+    <button id="dialog-close">Not now</button>
+  </div>
+</dialog>
+
+<script src="app.js" defer></script>
+</body>
+</html>

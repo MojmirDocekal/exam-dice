@@ -1,0 +1,15 @@
+{
+  "name": "Exam Dice — random question picker",
+  "short_name": "Exam Dice",
+  "description": "Roll a dice to pick random exam questions. Every number in a series is drawn at most once.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2efe7",
+  "theme_color": "#2e8b57",
+  "icons": [
+    { "src": "icons/dice-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/dice-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
